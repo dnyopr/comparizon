@@ -61,10 +61,10 @@
                 android:gravity="center"
                 android:text="result" />
 
-            <!--<android.support.v7.widget.RecyclerView-->
-            <!--android:id="@+id/list_item"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content" />-->
+            <android.support.v7.widget.RecyclerView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
 
         </LinearLayout>

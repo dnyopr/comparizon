@@ -11,7 +11,7 @@ import android.os.Parcelable;
  */
 
 @Entity(tableName = "ITEM_INFO")
-public class ItemInfo implements Parcelable{
+public class ItemInfo implements Parcelable {
 
     public ItemInfo() {
     }
@@ -31,7 +31,7 @@ public class ItemInfo implements Parcelable{
     @ColumnInfo
     private float size;
 
-    protected ItemInfo(Parcel in){
+    protected ItemInfo(Parcel in) {
         id = in.readInt();
         brand = in.readString();
         detail = in.toString();
@@ -50,6 +50,20 @@ public class ItemInfo implements Parcelable{
             return new ItemInfo[size];
         }
     };
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(id);
+        parcel.writeString(brand);
+        parcel.writeString(detail);
+        parcel.writeFloat(cost);
+        parcel.writeFloat(size);
+    }
 
     public int getId() {
         return id;
@@ -91,17 +105,4 @@ public class ItemInfo implements Parcelable{
         this.size = size;
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeInt(id);
-        parcel.writeString(brand);
-        parcel.writeString(detail);
-        parcel.writeFloat(cost);
-        parcel.writeFloat(size);
-    }
 }
