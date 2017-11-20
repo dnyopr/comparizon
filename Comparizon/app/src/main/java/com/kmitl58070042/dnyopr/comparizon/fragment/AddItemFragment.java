@@ -11,17 +11,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.kmitl58070042.dnyopr.comparizon.R;
 import com.kmitl58070042.dnyopr.comparizon.database.ItemInfoDB;
 import com.kmitl58070042.dnyopr.comparizon.model.ItemInfo;
 
-public class AddItemFragment extends Fragment {
+public class AddItemFragment extends Fragment implements View.OnClickListener
+{
 
     private ItemInfo itemInfo;
     private ItemInfoDB itemInfoDB;
     private EditText brand, detail, cost, size;
-    private Button btn_save;
+//    private Button btn_save;
 
 
     public AddItemFragment() {
@@ -44,7 +46,7 @@ public class AddItemFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_add_item,container,false);
 
         itemInfoDB = Room.databaseBuilder(getActivity(),
-                ItemInfoDB.class, "ITEM_INFO")
+                ItemInfoDB.class, "ItemInfo")
                 .fallbackToDestructiveMigration()
                 .build();
 
@@ -53,52 +55,76 @@ public class AddItemFragment extends Fragment {
         cost = rootView.findViewById(R.id.edit_cost);
         size = rootView.findViewById(R.id.edit_size);
 
+        Log.e("where","onCreateView");
+
         //save item data
-        btn_save = rootView.findViewById(R.id.btn_save);
+        Button btn_save = rootView.findViewById(R.id.btn_save);
         btn_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Log.e("where","onClick");
 
-                getActivity().getSupportFragmentManager()
-                        .beginTransaction()
-                        .remove(AddItemFragment.this)
-                        .commit();
-                onSave();
+//                if(R.id.btn_save == getId()){
+                    Log.e("where","save onclick");
+
+                    getActivity().getSupportFragmentManager()
+                            .beginTransaction()
+                            .remove(AddItemFragment.this)
+                            .commit();
+                    onSave();
+//                }
             }
         });
 
 
-        return inflater.inflate(R.layout.fragment_add_item, container, false);
+        return rootView;
     }
 
     private void onSave() {
-        try {
+//        try {
             Log.e("where","try");
             new AsyncTask<Void, Void, ItemInfo>(){
 
-
                 @Override
                 protected ItemInfo doInBackground(Void... voids) {
-
-                    itemInfo.setBrand(brand.getText().toString());
-                    itemInfo.setDetail(detail.getText().toString());
-                    itemInfo.setCost(Float.valueOf(cost.getText().toString()));
-                    itemInfo.setSize(Float.valueOf(size.getText().toString()));
+                    String strBrand = brand.getText().toString();
+Log.wtf("string",strBrand);
+                    itemInfo.setBrand(strBrand);
+                    itemInfo.setDetail(detail.getText()+"");
+                    itemInfo.setCost(Float.valueOf(cost.getText()+""));
+                    itemInfo.setSize(Float.valueOf(size.getText()+""));
 
                     itemInfoDB.itemInfoDAO().insert(itemInfo);
                     return null;
                 }
 
-                @Override
-                protected void onPostExecute(ItemInfo itemInfo) {
-                    super.onPostExecute(itemInfo);
-                }
+//                @Override
+//                protected void onPostExecute(ItemInfo itemInfo) {
+//                    super.onPostExecute(itemInfo);
+//                }
             }.execute();
-        }catch (Exception e){
-            Log.e("where","exception");
-        }
+//        }catch (Exception e){
+//            Toast.makeText(getActivity(), "Please fill up this form.", Toast.LENGTH_LONG).show();
+//        }
 
 
     }
 
+    @Override
+    public void onClick(View view) {
+
+
+//        Log.e("where","onClick");
+//
+//        if(R.id.btn_save == getId()){
+//            Log.e("where","save onclick");
+//
+//            getActivity().getSupportFragmentManager()
+//                    .beginTransaction()
+//                    .remove(AddItemFragment.this)
+//                    .commit();
+//            onSave();
+//        }
+
+    }
 }
