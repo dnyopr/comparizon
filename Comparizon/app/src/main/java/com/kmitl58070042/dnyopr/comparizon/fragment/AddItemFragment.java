@@ -23,6 +23,11 @@ public class AddItemFragment extends Fragment implements View.OnClickListener {
     private ItemInfo itemInfo;
     private ItemInfoDB itemInfoDB;
     private EditText brand, detail, cost, size;
+    private AddItemFragmentListener listener;
+
+    public interface AddItemFragmentListener {
+        void onItemAdded();
+    }
 
 
     public AddItemFragment() {
@@ -47,6 +52,8 @@ public class AddItemFragment extends Fragment implements View.OnClickListener {
                 .build();
         itemInfo = getArguments().getParcelable("itemInfo");
 
+        listener = (AddItemFragmentListener) getActivity();
+
     }
 
     @Override
@@ -54,7 +61,6 @@ public class AddItemFragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_add_item, container, false);
-
 
 
         brand = rootView.findViewById(R.id.edit_brand);
@@ -72,9 +78,9 @@ public class AddItemFragment extends Fragment implements View.OnClickListener {
     }
 
     private void onSave() {
+        if (validateData()) {
 
-        Log.e("where", "try");
-        try{
+            Log.e("where", "pass");
             new AsyncTask<Void, Void, ItemInfo>() {
 
                 @Override
@@ -93,30 +99,32 @@ public class AddItemFragment extends Fragment implements View.OnClickListener {
                 @Override
                 protected void onPostExecute(ItemInfo itemInfo) {
                     super.onPostExecute(itemInfo);
+
+                    listener.onItemAdded();
                 }
             }.execute();
-        }catch (Exception e){
-            e.printStackTrace();
+        }else {
             Toast.makeText(getActivity(), "Please enter description.", Toast.LENGTH_LONG).show();
-            return;
         }
+    }
 
-
-
-
+    private boolean validateData() {
+        if (brand.getText().toString().equals("") ||
+                detail.getText().toString().equals("") ||
+                cost.getText().toString().equals("") ||
+                size.getText().toString().equals("")) {
+            return false;
+        }
+        return true;
     }
 
     @Override
     public void onClick(View view) {
 
-            if (R.id.btn_save == view.getId()) {
-                Log.e("where", "onClick");
-
-                getActivity().getSupportFragmentManager()
-                        .popBackStack();
-                onSave();
-            }
-
+        if (R.id.btn_save == view.getId()) {
+            Log.e("where", "onClick");
+            onSave();
+        }
 
 
     }
