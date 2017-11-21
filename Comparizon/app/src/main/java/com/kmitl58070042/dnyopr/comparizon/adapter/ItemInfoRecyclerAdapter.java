@@ -13,9 +13,6 @@ import com.kmitl58070042.dnyopr.comparizon.model.ItemInfo;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by student on 20/11/2017 AD.
- */
 
 public class ItemInfoRecyclerAdapter extends RecyclerView.Adapter<ItemInfoRecyclerAdapter.ViewHolder> {
     private Context context;
@@ -23,10 +20,10 @@ public class ItemInfoRecyclerAdapter extends RecyclerView.Adapter<ItemInfoRecycl
 
     private ItemInfoRecyclerAdapterListener listener;
 
-    public ItemInfoRecyclerAdapter(Context context) {
+    public ItemInfoRecyclerAdapter(Context context, ItemInfoRecyclerAdapterListener listener) {
         this.context = context;
         this.data = new ArrayList<>();
-//        this.listener = (ItemInfoRecyclerAdapterListener) context;
+        this.listener = listener;
     }
 
     @Override
@@ -74,6 +71,6 @@ public class ItemInfoRecyclerAdapter extends RecyclerView.Adapter<ItemInfoRecycl
         }
     }
 
-    private interface ItemInfoRecyclerAdapterListener {
+    public interface ItemInfoRecyclerAdapterListener {
     }
 }

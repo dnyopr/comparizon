@@ -8,12 +8,12 @@
     tools:context="com.kmitl58070042.dnyopr.comparizon.MainActivity"
     android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btn_add"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:onClick="onClick"
-        android:text="Add item" />
+    <!--<Button-->
+        <!--android:id="@+id/btn_add"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="40dp"-->
+        <!--android:onClick="onClick"-->
+        <!--android:text="Add item" />-->
 
     <FrameLayout
         android:id="@+id/add_item_fragment"
@@ -54,17 +54,18 @@
             </LinearLayout>
 
             <TextView
+
                 android:id="@+id/txt_result"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
-                android:background="@android:color/holo_blue_bright"
+                android:background="#f1c40f"
                 android:gravity="center"
                 android:text="result" />
 
             <android.support.v7.widget.RecyclerView
             android:id="@+id/list"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="match_parent" />
 
 
         </LinearLayout>

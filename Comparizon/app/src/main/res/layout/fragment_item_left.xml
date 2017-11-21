@@ -2,7 +2,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.kmitl58070042.dnyopr.comparizon.fragment.ItemLeftFragment">
+    tools:context="com.kmitl58070042.dnyopr.comparizon.fragment.ItemLeftFragment"
+    android:id="@+id/fragment_l"
+    >
 
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
@@ -11,13 +13,15 @@
         android:layout_weight="1"
         android:gravity="center"
         android:orientation="vertical"
-        android:background="@android:color/white">
+        android:padding="10dp">
 
         <TextView
             android:id="@+id/item_a_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Header object A" />
+            android:textSize="15dp"
+            android:text="Header object A"
+            />
 
 
         <ImageView

@@ -31,12 +31,25 @@ public class ItemInfo implements Parcelable {
     @ColumnInfo
     private float size;
 
+    @ColumnInfo
+    private String image;
+
     protected ItemInfo(Parcel in) {
         id = in.readInt();
         brand = in.readString();
         detail = in.toString();
         cost = in.readFloat();
         size = in.readFloat();
+        image = in.readString();
+    }
+
+    public ItemInfo(int id, String brand, String detail, float cost, float size, String image) {
+        this.id = id;
+        this.brand = brand;
+        this.detail = detail;
+        this.cost = cost;
+        this.size = size;
+        this.image = image;
     }
 
     public static final Creator<ItemInfo> CREATOR = new Creator<ItemInfo>() {
@@ -57,12 +70,13 @@ public class ItemInfo implements Parcelable {
     }
 
     @Override
-    public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeInt(id);
-        parcel.writeString(brand);
-        parcel.writeString(detail);
-        parcel.writeFloat(cost);
-        parcel.writeFloat(size);
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeString(brand);
+        dest.writeString(detail);
+        dest.writeFloat(cost);
+        dest.writeFloat(size);
+        dest.writeString(image);
     }
 
     public int getId() {
@@ -105,4 +119,11 @@ public class ItemInfo implements Parcelable {
         this.size = size;
     }
 
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
 }
