@@ -43,9 +43,9 @@ public class AddItemFragment extends Fragment implements View.OnClickListener {
     private ItemInfoDB itemInfoDB;
     private EditText brand, detail, cost, size;
     private AddItemFragmentListener listener;
-    private int SELECT_FILE = 0;
-    private String strPath;
+    private Uri uri;
     private ImageView image;
+    private String strPath = null;
 
     private int REQUEST_CODE = 1;
 
@@ -134,7 +134,7 @@ public class AddItemFragment extends Fragment implements View.OnClickListener {
                 }
             }.execute();
         } else {
-            Toast.makeText(getActivity(), "Please enter description.", Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity(), "Please fill.", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -142,7 +142,9 @@ public class AddItemFragment extends Fragment implements View.OnClickListener {
         if (brand.getText().toString().equals("") ||
                 detail.getText().toString().equals("") ||
                 cost.getText().toString().equals("") ||
-                size.getText().toString().equals("")) {
+                size.getText().toString().equals("") ||
+                strPath.equals("") ||
+                strPath == null) {
             return false;
         }
         return true;
@@ -168,13 +170,8 @@ public class AddItemFragment extends Fragment implements View.OnClickListener {
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
+
         startActivityForResult(Intent.createChooser(intent, "Select"), REQUEST_CODE);
-
-//        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-//        intent.setType("image/*");
-//        startActivityForResult(intent.createChooser(intent, "Select File"), SELECT_FILE);
-
-
     }
 
     @Override
@@ -182,23 +179,23 @@ public class AddItemFragment extends Fragment implements View.OnClickListener {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == REQUEST_CODE && resultCode == RESULT_OK && data != null && data.getData() != null) {
-            Uri uri = data.getData();
+            uri = data.getData();
 
-            itemInfo.setImage(String.valueOf(uri));
+//            itemInfo.setImage(String.valueOf(uri));
+//            Bitmap bitmap = BitmapFactory.decodeFile(strPath);
+//            strPath = getRealPathFromURI(getActivity(), uri);
 
-            strPath = getRealPathFromURI(getContext(), uri);
+            strPath = uri.toString();
+            Log.wtf("path", strPath);
 
-            Log.wtf("path", String.valueOf(uri));
+            Bitmap bitmap = null;
             try {
-                Log.wtf("path", "try");
-                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), uri);
-
-                image.setImageBitmap(bitmap);
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
+                bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), Uri.parse(strPath));
             } catch (IOException e) {
                 e.printStackTrace();
             }
+            image.setImageBitmap(bitmap);
+
         } else {
             Log.wtf("path", "else");
         }
@@ -220,6 +217,7 @@ public class AddItemFragment extends Fragment implements View.OnClickListener {
     }
 
     private String getRealPathFromURI(Context context, Uri contentUri) {
+        Log.wtf("where", "getRealPath");
         Cursor cursor = null;
         try {
             String[] projection = {MediaStore.Images.Media.DATA};

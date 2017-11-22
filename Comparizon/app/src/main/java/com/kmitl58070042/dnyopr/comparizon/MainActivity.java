@@ -1,11 +1,8 @@
 package com.kmitl58070042.dnyopr.comparizon;
 
-import android.annotation.TargetApi;
+import android.annotation.SuppressLint;
 import android.arch.persistence.room.Room;
-import android.graphics.Color;
 import android.os.AsyncTask;
-import android.os.Build;
-import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -15,13 +12,11 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.FrameLayout;
 
 import com.kmitl58070042.dnyopr.comparizon.adapter.ItemInfoRecyclerAdapter;
 import com.kmitl58070042.dnyopr.comparizon.database.ItemInfoDB;
 import com.kmitl58070042.dnyopr.comparizon.fragment.AddItemFragment;
-import com.kmitl58070042.dnyopr.comparizon.fragment.ItemLeftFragment;
-import com.kmitl58070042.dnyopr.comparizon.fragment.ItemRightFragment;
+import com.kmitl58070042.dnyopr.comparizon.fragment.SelecteItemSide;
 import com.kmitl58070042.dnyopr.comparizon.model.ItemInfo;
 
 import java.util.List;
@@ -31,12 +26,13 @@ public class MainActivity
         extends AppCompatActivity
         implements View.OnClickListener
         , AddItemFragment.AddItemFragmentListener
-        , ItemInfoRecyclerAdapter.ItemInfoRecyclerAdapterListener , ItemLeftFragment.ItemLeftFragmentListener{
+        , ItemInfoRecyclerAdapter.ItemInfoRecyclerAdapterListener , SelecteItemSide.ItemLeftFragmentListener{
 
     private ItemInfoRecyclerAdapter adapter;
     private RecyclerView list;
     private ItemInfoDB itemInfoDB;
-    private String selectedFragment;
+    private String selectedSide;
+
 
 
 
@@ -45,6 +41,7 @@ public class MainActivity
         super.onSaveInstanceState(outState);
     }
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,7 +58,12 @@ public class MainActivity
         list.setLayoutManager(new LinearLayoutManager(this));
         list.setAdapter(adapter);
 
+
+
+
         if (savedInstanceState == null) {
+
+            showItemList();
             new AsyncTask<Void, Void, List<ItemInfo>>() {
 
                 @Override
@@ -75,15 +77,17 @@ public class MainActivity
                     adapter.notifyDataSetChanged();
                 }
             }.execute();
+        }else {
+
         }
 
 
         Log.wtf("where","fragment");
-
-        getSupportFragmentManager()
-                .beginTransaction()
-                .add(R.id.item_r_fragment, new ItemRightFragment())
-                .commit();
+//
+//        getSupportFragmentManager()
+//                .beginTransaction()
+//                .add(R.id.item_r_fragment, new ItemRightFragment())
+//                .commit();
 
     }
 
@@ -140,12 +144,9 @@ public class MainActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
-    public void onItemLSelected(FrameLayout frameLayout) {
-        selectedFragment = "left";
-        frameLayout.setBackground(getDrawable(R.drawable.layout_shadow));
-
-
+    public void onItemSelected(String selectedSide) {
+        this.selectedSide = selectedSide;
+        Log.wtf("what selected", this.selectedSide);
     }
 }

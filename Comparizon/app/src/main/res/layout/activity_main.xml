@@ -8,12 +8,6 @@
     tools:context="com.kmitl58070042.dnyopr.comparizon.MainActivity"
     android:orientation="vertical">
 
-    <!--<Button-->
-        <!--android:id="@+id/btn_add"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="40dp"-->
-        <!--android:onClick="onClick"-->
-        <!--android:text="Add item" />-->
 
     <FrameLayout
         android:id="@+id/add_item_fragment"
@@ -35,21 +29,14 @@
                 android:orientation="horizontal">
 
                 <fragment
-                    android:id="@+id/item_l_fragment"
+                    android:id="@+id/item_fragment"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:name="com.kmitl58070042.dnyopr.comparizon.fragment.ItemLeftFragment"
-                    tools:layout="@layout/fragment_item_left" />
+                    android:name="com.kmitl58070042.dnyopr.comparizon.fragment.SelecteItemSide"
+                    tools:layout="@layout/fragment_item_selected" />
 
 
-                <fragment
-                    android:id="@+id/item_r_fragment"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:name="com.kmitl58070042.dnyopr.comparizon.fragment.ItemRightFragment"
-                    tools:layout="@layout/fragment_item_right" />
 
             </LinearLayout>
 
@@ -57,7 +44,7 @@
 
                 android:id="@+id/txt_result"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="50dp"
                 android:background="#f1c40f"
                 android:gravity="center"
                 android:text="result" />
