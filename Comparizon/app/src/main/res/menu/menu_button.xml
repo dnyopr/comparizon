@@ -6,6 +6,7 @@
             android:icon="@drawable/btn_plus_24"
             android:orderInCategory="100"
             app:showAsAction="always"
-            android:title="btn add" />
+            android:title="btn add"
+            />
 
 </menu>

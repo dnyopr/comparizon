@@ -11,6 +11,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
@@ -167,6 +168,18 @@ public class AddItemFragment extends Fragment implements View.OnClickListener {
 
     private void addImage() {
 
+//        if (Build.VERSION.SDK_INT < 19) {
+//            intent = new Intent();
+//            intent.setAction(Intent.ACTION_GET_CONTENT);
+//            intent.setType("*/*");
+//            startActivityForResult(intent, KITKAT_VALUE);
+//        } else {
+//            intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+//            intent.addCategory(Intent.CATEGORY_OPENABLE);
+//            intent.setType("*/*");
+//            startActivityForResult(intent, KITKAT_VALUE);
+//        }
+
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
@@ -216,6 +229,9 @@ public class AddItemFragment extends Fragment implements View.OnClickListener {
 //        }
     }
 
+
+    ///get real uri path
+    /*
     private String getRealPathFromURI(Context context, Uri contentUri) {
         Log.wtf("where", "getRealPath");
         Cursor cursor = null;
@@ -231,6 +247,7 @@ public class AddItemFragment extends Fragment implements View.OnClickListener {
             }
         }
     }
+    */
 
 
 }
