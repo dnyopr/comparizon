@@ -32,15 +32,14 @@ import java.util.List;
 public class ItemInfoRecyclerAdapter extends RecyclerView.Adapter<ItemInfoRecyclerAdapter.ViewHolder> {
     private Context context;
     private List<ItemInfo> data;
-    private String selectedSide;
+    private int position;
 
     private ItemInfoRecyclerAdapterListener listener;
 
-    public ItemInfoRecyclerAdapter(Context context, ItemInfoRecyclerAdapterListener listener, String selectedSide) {
+    public ItemInfoRecyclerAdapter(Context context, ItemInfoRecyclerAdapterListener listener) {
         this.context = context;
         this.data = new ArrayList<>();
         this.listener = listener;
-        this.selectedSide = selectedSide;
     }
 
     @Override
@@ -54,7 +53,7 @@ public class ItemInfoRecyclerAdapter extends RecyclerView.Adapter<ItemInfoRecycl
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
         ItemInfo itemInfo = data.get(position);
 //        String imageUri = itemInfo.getImage();
 //        Bitmap bitmap = null;
@@ -75,8 +74,9 @@ public class ItemInfoRecyclerAdapter extends RecyclerView.Adapter<ItemInfoRecycl
         final Float cost = itemInfo.getCost();
         final Float size = itemInfo.getSize();
         final String image = itemInfo.getImage();
-        final String brand = itemInfo.getBrand();
+         final String brand = itemInfo.getBrand();
         final String detail = itemInfo.getDetail();
+        this.position = position;
 
         holder.txt_brand.setText(brand);
         holder.txt_detail.setText(detail);
@@ -90,18 +90,20 @@ public class ItemInfoRecyclerAdapter extends RecyclerView.Adapter<ItemInfoRecycl
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(context, cost + "", Toast.LENGTH_LONG).show();
-                Toast.makeText(context, size + "", Toast.LENGTH_LONG).show();
+//                Toast.makeText(context, cost + "", Toast.LENGTH_LONG).show();
+//                Toast.makeText(context, size + "", Toast.LENGTH_LONG).show();
                 listener.onItemInfoSelected(cost, size);
-                if (brand != null && detail != null && image != null && selectedSide != null) {
-                    Toast.makeText(context, listener.toString(), Toast.LENGTH_LONG).show();
-                    listener.setItem(brand, detail, image, selectedSide);
+                if (brand != null && detail != null && image != null ) {
+//                    Toast.makeText(context, listener.toString(), Toast.LENGTH_LONG).show();
+                    listener.setItem(position);
                 }
                 else {
-                    Log.wtf("what",brand+"/"+detail+"/"+image+"/"+selectedSide);
+                    Log.wtf("what",brand+"/"+detail+"/"+image+"/");
                 }
 
             }
+
+
         });
 
     }
@@ -145,10 +147,7 @@ public class ItemInfoRecyclerAdapter extends RecyclerView.Adapter<ItemInfoRecycl
 
     public interface ItemInfoRecyclerAdapterListener {
         void onItemInfoSelected(float cost, float size);
-        void setItem(String brand, String detail, String image, String selectedSide);
+        void setItem(int position);
     }
 
-    public void setSelectedSide(String selectedSide) {
-        this.selectedSide = selectedSide;
-    }
 }

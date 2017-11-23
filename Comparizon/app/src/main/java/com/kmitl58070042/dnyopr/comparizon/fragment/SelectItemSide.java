@@ -17,32 +17,19 @@ import android.widget.Toast;
 import com.kmitl58070042.dnyopr.comparizon.MainActivity;
 import com.kmitl58070042.dnyopr.comparizon.R;
 import com.kmitl58070042.dnyopr.comparizon.adapter.ItemInfoRecyclerAdapter;
+import com.kmitl58070042.dnyopr.comparizon.model.ItemInfo;
 
-public class SelectItemSide extends Fragment implements ItemInfoRecyclerAdapter.ItemInfoRecyclerAdapterListener {
+import java.util.List;
+
+public class SelectItemSide extends Fragment  {
 
     private SelectItemSideListener listener;
     private LinearLayout itemL, itemR;
     private TextView itemLName, itemRName;
     private TextView itemLDetail, itemRDetail;
     private ImageView itemLImage, itemRimage;
+    private List<ItemInfo> data;
 
-
-    @Override
-    public void onItemInfoSelected(float cost, float size) {
-    }
-
-    @Override
-    public void setItem(String brand, String detail,String image, String selectedItem) {
-        Toast.makeText(getContext(), "setItem", Toast.LENGTH_LONG).show();
-        if(selectedItem.equals("L")){
-            itemLName.setText(brand);
-            itemLDetail.setText(detail);
-            Log.wtf("is set","select L");
-        }
-        else{
-            Log.wtf("is set","else at setItemSide");
-        }
-    }
 
 
     public interface SelectItemSideListener {
@@ -52,6 +39,16 @@ public class SelectItemSide extends Fragment implements ItemInfoRecyclerAdapter.
 
     public SelectItemSide() {
         // Required empty public constructor
+    }
+
+    public static SelectItemSide newInstance(ItemInfo itemInfo,int position) {
+
+        Bundle args = new Bundle();
+        args.putParcelable("itemInfo", itemInfo);
+        SelectItemSide fragment = new SelectItemSide();
+        fragment.setArguments(args);
+
+        return fragment;
     }
 
 

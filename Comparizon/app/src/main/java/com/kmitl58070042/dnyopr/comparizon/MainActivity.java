@@ -58,7 +58,7 @@ public class MainActivity
                 .fallbackToDestructiveMigration()
                 .build();
 
-        adapter = new ItemInfoRecyclerAdapter(this, this, selectedSide);
+        adapter = new ItemInfoRecyclerAdapter(this, this);
 
 
         list = findViewById(R.id.list);
@@ -153,7 +153,6 @@ public class MainActivity
     @Override
     public void onItemSelected(String selectedSide) {
         this.selectedSide = selectedSide;
-        adapter.setSelectedSide(selectedSide);
         Log.wtf("what selected", this.selectedSide);
     }
 
@@ -174,10 +173,12 @@ public class MainActivity
     }
 
     @Override
-    public void setItem(String brand, String detail, String image, String selectedSide) {
-
-
-
+    public void setItem(int position) {
+        getSupportFragmentManager()
+                .beginTransaction()
+                .add(R.id.item_fragment, SelectItemSide.newInstance(new ItemInfo(),position))
+                .addToBackStack(null)
+                .commit();
     }
 
     private void resultSet(String result) {
