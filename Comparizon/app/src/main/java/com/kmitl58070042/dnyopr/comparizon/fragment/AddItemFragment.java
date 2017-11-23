@@ -22,7 +22,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -179,12 +178,11 @@ public class AddItemFragment extends Fragment implements View.OnClickListener {
 //            intent.setType("*/*");
 //            startActivityForResult(intent, KITKAT_VALUE);
 //        }
-
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
 
-        startActivityForResult(Intent.createChooser(intent, "Select"), REQUEST_CODE);
+        startActivityForResult(Intent.createChooser(intent, "Select photo from"), REQUEST_CODE);
     }
 
     @Override
@@ -193,21 +191,18 @@ public class AddItemFragment extends Fragment implements View.OnClickListener {
 
         if (requestCode == REQUEST_CODE && resultCode == RESULT_OK && data != null && data.getData() != null) {
             uri = data.getData();
-
 //            itemInfo.setImage(String.valueOf(uri));
 //            Bitmap bitmap = BitmapFactory.decodeFile(strPath);
 //            strPath = getRealPathFromURI(getActivity(), uri);
-
             strPath = uri.toString();
             Log.wtf("path", strPath);
 
-            Bitmap bitmap = null;
             try {
-                bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), Uri.parse(strPath));
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), Uri.parse(strPath));
+                image.setImageBitmap(bitmap);
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            image.setImageBitmap(bitmap);
 
         } else {
             Log.wtf("path", "else");
@@ -231,23 +226,23 @@ public class AddItemFragment extends Fragment implements View.OnClickListener {
 
 
     ///get real uri path
-    /*
-    private String getRealPathFromURI(Context context, Uri contentUri) {
-        Log.wtf("where", "getRealPath");
-        Cursor cursor = null;
-        try {
-            String[] projection = {MediaStore.Images.Media.DATA};
-            cursor = context.getContentResolver().query(contentUri, projection, null, null, null);
-            int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
-            cursor.moveToFirst();
-            return cursor.getString(column_index);
-        } finally {
-            if (cursor != null) {
-                cursor.close();
-            }
-        }
-    }
-    */
+
+//    private String getRealPathFromURI(Context context, Uri contentUri) {
+//        Log.wtf("where", "getRealPath");
+//        Cursor cursor = null;
+//        try {
+//            String[] projection = {MediaStore.Images.Media.DATA};
+//            cursor = context.getContentResolver().query(contentUri, projection, null, null, null);
+//            int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+//            cursor.moveToFirst();
+//            return cursor.getString(column_index);
+//        } finally {
+//            if (cursor != null) {
+//                cursor.close();
+//            }
+//        }
+//    }
+
 
 
 }

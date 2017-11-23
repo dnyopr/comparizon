@@ -11,10 +11,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.kmitl58070042.dnyopr.comparizon.R;
+import com.kmitl58070042.dnyopr.comparizon.fragment.AddItemFragment;
+import com.kmitl58070042.dnyopr.comparizon.fragment.SelectItemSide;
 import com.kmitl58070042.dnyopr.comparizon.model.ItemInfo;
 
 import org.w3c.dom.Text;
@@ -28,13 +32,15 @@ import java.util.List;
 public class ItemInfoRecyclerAdapter extends RecyclerView.Adapter<ItemInfoRecyclerAdapter.ViewHolder> {
     private Context context;
     private List<ItemInfo> data;
+    private String selectedSide;
 
     private ItemInfoRecyclerAdapterListener listener;
 
-    public ItemInfoRecyclerAdapter(Context context, ItemInfoRecyclerAdapterListener listener) {
+    public ItemInfoRecyclerAdapter(Context context, ItemInfoRecyclerAdapterListener listener, String selectedSide) {
         this.context = context;
         this.data = new ArrayList<>();
         this.listener = listener;
+        this.selectedSide = selectedSide;
     }
 
     @Override
@@ -50,32 +56,53 @@ public class ItemInfoRecyclerAdapter extends RecyclerView.Adapter<ItemInfoRecycl
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         ItemInfo itemInfo = data.get(position);
+//        String imageUri = itemInfo.getImage();
+//        Bitmap bitmap = null;
+//        if (imageUri!=null){
+//            Log.wtf("where","maii null ja");
+//            Log.wtf("where",imageUri);
+//            try {
+//                bitmap = MediaStore.Images.Media.getBitmap(context.getContentResolver(), Uri.parse(imageUri));
+//                Log.wtf("bitmap", bitmap.toString());
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//        }else {
+//            Log.wtf("where","null ja");
+//            Log.wtf("test null",itemInfo.getBrand());
+//        }
 
-        Bitmap bitmap = null;
-        String imageUri = itemInfo.getImage();
+        final Float cost = itemInfo.getCost();
+        final Float size = itemInfo.getSize();
+        final String image = itemInfo.getImage();
+        final String brand = itemInfo.getBrand();
+        final String detail = itemInfo.getDetail();
+
+        holder.txt_brand.setText(brand);
+        holder.txt_detail.setText(detail);
+        holder.txt_cost.setText(Float.toString(cost));
+        holder.txt_size.setText(Float.toString(size));
+//         holder.imageView.setImageBitmap(bitmap);
+        Glide.with(context).load(image).into(holder.imageView);
 
 
-        if (imageUri!=null){
-            Log.wtf("where","maii null ja");
-            Log.wtf("where",imageUri);
-            try {
-                bitmap = MediaStore.Images.Media.getBitmap(context.getContentResolver(), Uri.parse(imageUri));
-                Log.wtf("bitmap", bitmap.toString());
-            } catch (Exception e) {
-                e.printStackTrace();
+        holder.linearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(context, cost + "", Toast.LENGTH_LONG).show();
+                Toast.makeText(context, size + "", Toast.LENGTH_LONG).show();
+                listener.onItemInfoSelected(cost, size);
+                if (brand != null && detail != null && image != null && selectedSide != null) {
+                    Toast.makeText(context, listener.toString(), Toast.LENGTH_LONG).show();
+                    listener.setItem(brand, detail, image, selectedSide);
+                }
+                else {
+                    Log.wtf("what",brand+"/"+detail+"/"+image+"/"+selectedSide);
+                }
+
             }
-        }else {
-            Log.wtf("where","null ja");
-            Log.wtf("test null",itemInfo.getBrand());
-        }
-
-        holder.txt_brand.setText(itemInfo.getBrand());
-        holder.txt_detail.setText(itemInfo.getDetail());
-        holder.txt_cost.setText(Float.toString(itemInfo.getCost()));
-        holder.txt_size.setText(Float.toString(itemInfo.getSize()));
-//        Glide.with(context).load(position).into(holder.imageView);
-
-         holder.imageView.setImageBitmap(bitmap);
+        });
 
     }
 
@@ -99,6 +126,8 @@ public class ItemInfoRecyclerAdapter extends RecyclerView.Adapter<ItemInfoRecycl
         TextView txt_cost;
         TextView txt_size;
         ImageView imageView;
+        ItemInfo itemInfo;
+        LinearLayout linearLayout;
 
 
         public ViewHolder(View itemView) {
@@ -109,10 +138,17 @@ public class ItemInfoRecyclerAdapter extends RecyclerView.Adapter<ItemInfoRecycl
             txt_cost = itemView.findViewById(R.id.item_cost);
             txt_size = itemView.findViewById(R.id.item_size);
             imageView = itemView.findViewById(R.id.item_image);
+            linearLayout = itemView.findViewById(R.id.item_list);
 
         }
     }
 
     public interface ItemInfoRecyclerAdapterListener {
+        void onItemInfoSelected(float cost, float size);
+        void setItem(String brand, String detail, String image, String selectedSide);
+    }
+
+    public void setSelectedSide(String selectedSide) {
+        this.selectedSide = selectedSide;
     }
 }

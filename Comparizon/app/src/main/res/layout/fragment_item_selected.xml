@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.kmitl58070042.dnyopr.comparizon.fragment.SelecteItemSide"
+    tools:context="com.kmitl58070042.dnyopr.comparizon.fragment.SelectItemSide"
     >
 
     <!-- TODO: Update blank fragment layout -->
@@ -25,7 +25,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="15dp"
-                android:text="Header object A"
+                android:text="Header L"
                 />
 
 
@@ -40,7 +40,7 @@
                 android:id="@+id/item_l_detail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="detail Object A" />
+                android:text="detail L" />
 
         </LinearLayout>
         <LinearLayout
@@ -53,7 +53,7 @@
             android:padding="10dp">
 
             <TextView
-                android:id="@+id/item_b_name"
+                android:id="@+id/item_r_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="15dp"
@@ -62,14 +62,14 @@
 
 
             <ImageView
-                android:id="@+id/item_b_image"
+                android:id="@+id/item_r_image"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:src="@mipmap/ic_launcher_round"
                 android:layout_weight="1"/>
 
             <TextView
-                android:id="@+id/item_b_detail"
+                android:id="@+id/item_r_detail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="detail Object A" />
