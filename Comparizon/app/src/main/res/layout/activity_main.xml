@@ -29,15 +29,13 @@
                 android:layout_height="200dp"
                 android:orientation="horizontal">
 
-                <fragment
+                <FrameLayout
                     android:id="@+id/item_fragment"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:name="com.kmitl58070042.dnyopr.comparizon.fragment.SelectItemSide"
-                    tools:layout="@layout/fragment_item_selected" />
+                    android:layout_weight="1">
 
-
+                </FrameLayout>
 
             </LinearLayout>
 
@@ -57,11 +55,6 @@
 
         </LinearLayout>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:gravity="center"
-            android:text="VS" />
 
     </FrameLayout>
 

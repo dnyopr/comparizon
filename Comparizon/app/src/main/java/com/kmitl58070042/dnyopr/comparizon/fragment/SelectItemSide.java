@@ -1,9 +1,7 @@
 package com.kmitl58070042.dnyopr.comparizon.fragment;
 
 
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -12,24 +10,23 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.GlideException;
 import com.kmitl58070042.dnyopr.comparizon.MainActivity;
 import com.kmitl58070042.dnyopr.comparizon.R;
-import com.kmitl58070042.dnyopr.comparizon.adapter.ItemInfoRecyclerAdapter;
 import com.kmitl58070042.dnyopr.comparizon.model.ItemInfo;
-
-import java.util.List;
 
 public class SelectItemSide extends Fragment  {
 
+    public static String TAG = SelectItemSide.class.getSimpleName();
     private SelectItemSideListener listener;
     private LinearLayout itemL, itemR;
     private TextView itemLName, itemRName;
     private TextView itemLDetail, itemRDetail;
-    private ImageView itemLImage, itemRimage;
-    private List<ItemInfo> data;
+    private ImageView itemLImage, itemRImage;
 
+    private ItemInfo itemInfo;
 
 
     public interface SelectItemSideListener {
@@ -41,13 +38,11 @@ public class SelectItemSide extends Fragment  {
         // Required empty public constructor
     }
 
-    public static SelectItemSide newInstance(ItemInfo itemInfo,int position) {
-
+    public static SelectItemSide newInstance(ItemInfo itemInfo) {
         Bundle args = new Bundle();
         args.putParcelable("itemInfo", itemInfo);
         SelectItemSide fragment = new SelectItemSide();
         fragment.setArguments(args);
-
         return fragment;
     }
 
@@ -61,17 +56,26 @@ public class SelectItemSide extends Fragment  {
         Log.wtf("where","set rootview already");
         listener = (MainActivity) getActivity();
 
-
+        //set Id for left side
         itemLName = rootView.findViewById(R.id.item_l_name);
         itemLDetail =rootView.findViewById(R.id.item_l_detail);
         itemLImage = rootView.findViewById(R.id.item_l_image);
         itemL = rootView.findViewById(R.id.item_left);
+         //setId for right side
+        itemRName = rootView.findViewById(R.id.item_r_name);
+        itemRDetail =rootView.findViewById(R.id.item_r_detail);
+        itemRImage = rootView.findViewById(R.id.item_r_image);
+        itemR = rootView.findViewById(R.id.item_right);
+
+
+
+
+        itemInfo = getArguments().getParcelable("itemInfo");
+
         itemL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                listener.onItemSelected("L");
-                itemL.setBackgroundDrawable(getResources().getDrawable(R.drawable.layout_shadow));
-                itemR.setBackgroundDrawable(getResources().getDrawable(R.drawable.layout_normal));
+                setStyleSelectL();
             }
         });
 
@@ -79,16 +83,36 @@ public class SelectItemSide extends Fragment  {
         itemR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                listener.onItemSelected("R");
-                itemR.setBackgroundDrawable(getResources().getDrawable(R.drawable.layout_shadow));
-                itemL.setBackgroundDrawable(getResources().getDrawable(R.drawable.layout_normal));
+                setStyleSelectR();
             }
         });
-
-
         return rootView;
     }
 
+    public void setLValue(String brand, String detail, String image) throws GlideException{
+        Glide.with(getActivity()).load(image).into(itemLImage);
+        itemLName.setText(brand);
+        itemLDetail.setText(detail);
+        setStyleSelectR();
+    }
+
+    public void setRValue(String brand, String detail, String image) throws GlideException{
+        Glide.with(getActivity()).load(image).into(itemRImage);
+        itemRName.setText(brand);
+        itemRDetail.setText(detail);
+        setStyleSelectL();
+    }
+
+    private void setStyleSelectL(){
+        listener.onItemSelected("L");
+        itemL.setBackgroundDrawable(getResources().getDrawable(R.drawable.layout_shadow));
+        itemR.setBackgroundDrawable(getResources().getDrawable(R.drawable.layout_normal));
+    }
+    private void setStyleSelectR(){
+        listener.onItemSelected("R");
+        itemR.setBackgroundDrawable(getResources().getDrawable(R.drawable.layout_shadow));
+        itemL.setBackgroundDrawable(getResources().getDrawable(R.drawable.layout_normal));
+    }
 
 
 

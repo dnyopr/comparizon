@@ -71,10 +71,10 @@ public class ItemInfoRecyclerAdapter extends RecyclerView.Adapter<ItemInfoRecycl
 //            Log.wtf("test null",itemInfo.getBrand());
 //        }
 
-        final Float cost = itemInfo.getCost();
-        final Float size = itemInfo.getSize();
+        final float cost = itemInfo.getCost();
+        final float size = itemInfo.getSize();
         final String image = itemInfo.getImage();
-         final String brand = itemInfo.getBrand();
+        final String brand = itemInfo.getBrand();
         final String detail = itemInfo.getDetail();
         this.position = position;
 
@@ -89,16 +89,10 @@ public class ItemInfoRecyclerAdapter extends RecyclerView.Adapter<ItemInfoRecycl
         holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-//                Toast.makeText(context, cost + "", Toast.LENGTH_LONG).show();
-//                Toast.makeText(context, size + "", Toast.LENGTH_LONG).show();
-                listener.onItemInfoSelected(cost, size);
-                if (brand != null && detail != null && image != null ) {
-//                    Toast.makeText(context, listener.toString(), Toast.LENGTH_LONG).show();
-                    listener.setItem(position);
-                }
-                else {
-                    Log.wtf("what",brand+"/"+detail+"/"+image+"/");
+                if (brand != null && detail != null && image != null) {
+                    listener.setItem(brand, detail, image,cost,size);
+                } else {
+                    Log.wtf("what", brand + "/" + detail + "/" + image + "/");
                 }
 
             }
@@ -146,8 +140,7 @@ public class ItemInfoRecyclerAdapter extends RecyclerView.Adapter<ItemInfoRecycl
     }
 
     public interface ItemInfoRecyclerAdapterListener {
-        void onItemInfoSelected(float cost, float size);
-        void setItem(int position);
+        void setItem(String brand, String detail, String image,float cost, float size);
     }
 
 }

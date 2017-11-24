@@ -18,7 +18,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical"
-            android:padding="10dp">
+            android:padding="10dp"
+            android:background="@drawable/layout_shadow">
 
             <TextView
                 android:id="@+id/item_l_name"

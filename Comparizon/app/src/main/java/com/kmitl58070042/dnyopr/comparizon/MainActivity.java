@@ -13,7 +13,9 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.bumptech.glide.load.engine.GlideException;
 import com.kmitl58070042.dnyopr.comparizon.adapter.ItemInfoRecyclerAdapter;
 import com.kmitl58070042.dnyopr.comparizon.database.ItemInfoDB;
 import com.kmitl58070042.dnyopr.comparizon.fragment.AddItemFragment;
@@ -36,10 +38,11 @@ public class MainActivity
     private ItemInfoDB itemInfoDB;
     private Compare compare;
 
-    private String result, selectedSide="L" ;
+    private String result, selectedSide = "L";
     private int countSelectedItem = 0;
 
-    private float costA, sizeA, costB, sizeB;
+
+    float costA = (float) 0.0, sizeA = (float) 0.0, costB = (float) 0.0, sizeB = (float) 0.0;
 
 
     @Override
@@ -80,11 +83,18 @@ public class MainActivity
                 protected void onPostExecute(List<ItemInfo> itemInfos) {
                     adapter.setData(itemInfos);
                     adapter.notifyDataSetChanged();
+                    pleaseAddItems(itemInfos.size());
+
                 }
             }.execute();
         } else {
 
         }
+
+        getSupportFragmentManager()
+                .beginTransaction()
+                .add(R.id.item_fragment, SelectItemSide.newInstance(new ItemInfo()), SelectItemSide.TAG)
+                .commit();
 
 
         Log.wtf("where", "fragment");
@@ -123,6 +133,7 @@ public class MainActivity
             protected void onPostExecute(List<ItemInfo> itemInfos) {
                 adapter.setData(itemInfos);
                 adapter.notifyDataSetChanged();
+                pleaseAddItems(itemInfos.size());
             }
         }.execute();
     }
@@ -156,33 +167,84 @@ public class MainActivity
         Log.wtf("what selected", this.selectedSide);
     }
 
-    @Override
-    public void onItemInfoSelected(float cost, float size) {
-        compare = new Compare();
-        countSelectedItem += 1;
-        if (countSelectedItem == 1) {
-            costA = cost;
-            sizeA = size;
-        } else if (countSelectedItem == 2) {
-            costB = cost;
-            sizeB = size;
-            result = compare.findCheaperItem(costA, sizeA, costB, sizeB);
-            countSelectedItem = 0;
-            resultSet(result);
-        }
-    }
+//    @Override
+//    public void onItemInfoSelected(float cost, float size) {
+//        compare = new Compare();
+//        countSelectedItem += 1;
+//        if (countSelectedItem == 1) {
+//            costA = cost;
+//            sizeA = size;
+//        } else if (countSelectedItem == 2) {
+//            costB = cost;
+//            sizeB = size;
+//            result = compare.findCheaperItem(costA, sizeA, costB, sizeB);
+//            countSelectedItem = 0;
+//            resultSet(result);
+//        }
+//    }
 
-    @Override
-    public void setItem(int position) {
-        getSupportFragmentManager()
-                .beginTransaction()
-                .add(R.id.item_fragment, SelectItemSide.newInstance(new ItemInfo(),position))
-                .addToBackStack(null)
-                .commit();
-    }
+//    @Override
+//    public void setItem(int position) {
+//        getSupportFragmentManager()
+//                .popBackStack();
+//
+//        SelectItemSide fragment = (SelectItemSide) getSupportFragmentManager().findFragmentByTag(SelectItemSide.TAG);
+//
+//        if (selectedSide == "L") {
+//            fragment.setLValue(position);
+//        }
+//    }
 
     private void resultSet(String result) {
         TextView txtResult = findViewById(R.id.txt_result);
         txtResult.setText(result + " is cheaper!");
+    }
+
+    private void pleaseAddItems(int itemListSize) {
+        TextView txtResult = findViewById(R.id.txt_result);
+        Log.wtf("size", itemListSize + "");
+        if (itemListSize == 0) {
+            txtResult.setText("Please add an item");
+        } else if (itemListSize == 1) {
+            txtResult.setText("Please add another items");
+        }
+    }
+
+    @Override
+    public void setItem(String brand, String detail, String image, float cost, float size) {
+        compare = new Compare();
+
+        getSupportFragmentManager()
+                .popBackStack();
+
+        SelectItemSide fragment = (SelectItemSide) getSupportFragmentManager().findFragmentByTag(SelectItemSide.TAG);
+
+        if (selectedSide == "L") {
+            try {
+                costA = cost;
+                sizeA = size;
+                fragment.setLValue(brand, detail, image);
+            } catch (GlideException e) {
+                e.printStackTrace();
+            }
+        } else {
+            try {
+                costB = cost;
+                sizeB = size;
+                fragment.setRValue(brand, detail, image);
+            } catch (GlideException e) {
+                e.printStackTrace();
+            }
+        }
+
+        Log.wtf("valuse chk", "" + costA + "" + costB + "" + sizeA + "" + sizeB);
+        if (costA != 0.0 && costB != 0.0 && sizeA != 0.0 && sizeB != 0.0) {
+            Log.wtf("0.0", "not null");
+            result = compare.findCheaperItem(costA, sizeA, costB, sizeB);
+            resultSet(result);
+        }else {
+            Log.wtf("0.0", "all is null");
+        }
+
     }
 }
