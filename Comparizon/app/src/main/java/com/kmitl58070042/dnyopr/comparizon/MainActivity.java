@@ -1,8 +1,17 @@
 package com.kmitl58070042.dnyopr.comparizon;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.arch.persistence.room.Room;
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.AsyncTask;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,7 +20,10 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,8 +34,10 @@ import com.kmitl58070042.dnyopr.comparizon.fragment.AddItemFragment;
 import com.kmitl58070042.dnyopr.comparizon.fragment.SelectItemSide;
 import com.kmitl58070042.dnyopr.comparizon.model.Compare;
 import com.kmitl58070042.dnyopr.comparizon.model.ItemInfo;
+import com.kmitl58070042.dnyopr.comparizon.model.Screenshot;
 
 import java.util.List;
+import java.util.concurrent.LinkedTransferQueue;
 
 
 public class MainActivity
@@ -35,11 +49,16 @@ public class MainActivity
 
     private ItemInfoRecyclerAdapter adapter;
     private RecyclerView list;
+    private ImageView btn_share;
+
     private ItemInfoDB itemInfoDB;
     private Compare compare;
 
+    private LinearLayout comparizon_space;
+
     private String result, selectedSide = "L";
-    private int countSelectedItem = 0;
+    private int selectedItem = 0;
+    private final int WRITE_EXTERNAL_REQUEST_CODE = 2;
 
 
     float costA = (float) 0.0, sizeA = (float) 0.0, costB = (float) 0.0, sizeB = (float) 0.0;
@@ -63,11 +82,14 @@ public class MainActivity
 
         adapter = new ItemInfoRecyclerAdapter(this, this);
 
+        comparizon_space = findViewById(R.id.comparison_space);
 
         list = findViewById(R.id.list);
         list.setLayoutManager(new LinearLayoutManager(this));
         list.setAdapter(adapter);
 
+        btn_share = findViewById(R.id.btn_share);
+        btn_share.setOnClickListener(this);
 
         if (savedInstanceState == null) {
 
@@ -87,15 +109,13 @@ public class MainActivity
 
                 }
             }.execute();
-        } else {
-
         }
+
 
         getSupportFragmentManager()
                 .beginTransaction()
                 .add(R.id.item_fragment, SelectItemSide.newInstance(new ItemInfo()), SelectItemSide.TAG)
                 .commit();
-
 
         Log.wtf("where", "fragment");
 //
@@ -108,7 +128,14 @@ public class MainActivity
 
     @Override
     public void onClick(View view) {
+        if (R.id.btn_share == view.getId()) {
+            if (selectedItem == 1) {
+                onShare(comparizon_space);
+            }else {
+                Toast.makeText(this,"Please make some comparizon first.",Toast.LENGTH_LONG).show();
+            }
 
+        }
     }
 
 
@@ -139,7 +166,7 @@ public class MainActivity
     }
 
 
-    //btn on action bar
+    //------ btn on action bar ------//
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -157,9 +184,6 @@ public class MainActivity
                         .addToBackStack(null)
                         .commit();
                 break;
-            case R.id.btn_share:
-
-
         }
         return super.onOptionsItemSelected(item);
     }
@@ -242,12 +266,66 @@ public class MainActivity
 
         Log.wtf("valuse chk", "" + costA + "" + costB + "" + sizeA + "" + sizeB);
         if (costA != 0.0 && costB != 0.0 && sizeA != 0.0 && sizeB != 0.0) {
-            Log.wtf("0.0", "not null");
+            selectedItem = 1;
             result = compare.findCheaperItem(costA, sizeA, costB, sizeB);
             resultSet(result);
-        }else {
+        } else {
             Log.wtf("0.0", "all is null");
         }
 
     }
+
+
+    private void createShareIntent(Uri uriImage) {
+        Intent shareIntent = new Intent(Intent.ACTION_SEND);
+        shareIntent.setType("image/*");
+        shareIntent.putExtra(Intent.EXTRA_STREAM, uriImage);
+        try {
+            startActivity(Intent.createChooser(shareIntent, " How do you want to share? "));
+        } catch (ActivityNotFoundException e) {
+            Toast.makeText(MainActivity.this, "No App Available", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    // ------ onshare ------//
+    private void onShare(View imageView) {
+
+        //Permission
+        if (askPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, WRITE_EXTERNAL_REQUEST_CODE)) {
+            //Screenshot
+            Bitmap image = Screenshot.takescreenshotOfRootView(imageView);
+            Uri screenshotUri = Screenshot.getImageUri(this.getApplicationContext(), image);
+
+            //Share
+            createShareIntent(screenshotUri);
+        }
+    }
+
+    //------- Permission ------//
+    private boolean askPermission(String permission, int requestCode) {
+        if (ContextCompat.checkSelfPermission(this, permission) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{permission}, requestCode);
+            return false;
+        } else {
+//            Toast.makeText(this, "Permission is Already Granted", Toast.LENGTH_SHORT).show();
+            return true;
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch (requestCode) {
+            case WRITE_EXTERNAL_REQUEST_CODE:
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    Toast.makeText(this, "WRITE_EXTERNAL Permission Granted", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(this, "WRITE_EXTERNAL Permission Denied", Toast.LENGTH_SHORT).show();
+                }
+                onShare(comparizon_space);
+                return;
+        }
+    }
+
+
+
 }

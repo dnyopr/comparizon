@@ -122,7 +122,6 @@ public class ItemInfoRecyclerAdapter extends RecyclerView.Adapter<ItemInfoRecycl
         TextView txt_cost;
         TextView txt_size;
         ImageView imageView;
-        ItemInfo itemInfo;
         LinearLayout linearLayout;
 
 
@@ -142,5 +141,10 @@ public class ItemInfoRecyclerAdapter extends RecyclerView.Adapter<ItemInfoRecycl
     public interface ItemInfoRecyclerAdapterListener {
         void setItem(String brand, String detail, String image,float cost, float size);
     }
+
+
+
+
+
 
 }

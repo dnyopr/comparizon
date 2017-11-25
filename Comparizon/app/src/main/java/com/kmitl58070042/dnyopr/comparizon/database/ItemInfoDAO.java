@@ -1,8 +1,10 @@
 package com.kmitl58070042.dnyopr.comparizon.database;
 
 import android.arch.persistence.room.Dao;
+import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
+import android.content.ClipData;
 
 import com.kmitl58070042.dnyopr.comparizon.model.ItemInfo;
 
@@ -16,4 +18,7 @@ public interface ItemInfoDAO {
 
     @Insert
     void insert(ItemInfo itemInfo);
+
+    @Delete
+    void delete(ItemInfo itemInfo);
 }
