@@ -157,6 +157,9 @@ public class MainActivity
                         .addToBackStack(null)
                         .commit();
                 break;
+            case R.id.btn_share:
+
+
         }
         return super.onOptionsItemSelected(item);
     }
