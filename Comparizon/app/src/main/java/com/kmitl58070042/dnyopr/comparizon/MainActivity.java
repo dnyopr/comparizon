@@ -4,6 +4,7 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.arch.persistence.room.Room;
 import android.content.ActivityNotFoundException;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -11,7 +12,9 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -50,6 +53,7 @@ public class MainActivity
     private ItemInfoRecyclerAdapter adapter;
     private RecyclerView list;
     private ImageView btn_share;
+    private boolean isFragmenrAddOn =false;
 
     private ItemInfoDB itemInfoDB;
     private Compare compare;
@@ -178,11 +182,13 @@ public class MainActivity
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.btn_add:
-                getSupportFragmentManager()
-                        .beginTransaction()
-                        .add(R.id.add_item_fragment, AddItemFragment.newInstance(new ItemInfo()))
-                        .addToBackStack(null)
-                        .commit();
+                if(getSupportFragmentManager().getBackStackEntryCount()==0) {
+                    getSupportFragmentManager()
+                            .beginTransaction()
+                            .add(R.id.add_item_fragment, AddItemFragment.newInstance(new ItemInfo()))
+                            .addToBackStack("add")
+                            .commit();
+                }
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -224,7 +230,7 @@ public class MainActivity
 
     private void resultSet(String result) {
         TextView txtResult = findViewById(R.id.txt_result);
-        txtResult.setText(result + " is cheaper!");
+        txtResult.setText(result);
     }
 
     private void pleaseAddItems(int itemListSize) {
@@ -233,12 +239,14 @@ public class MainActivity
         if (itemListSize == 0) {
             txtResult.setText("Please add an item");
         } else if (itemListSize == 1) {
-            txtResult.setText("Please add another items");
+            txtResult.setText("Please add another item");
         }
     }
 
+
     @Override
     public void setItem(String brand, String detail, String image, float cost, float size) {
+
         compare = new Compare();
 
         getSupportFragmentManager()
@@ -270,9 +278,41 @@ public class MainActivity
             result = compare.findCheaperItem(costA, sizeA, costB, sizeB);
             resultSet(result);
         } else {
-            Log.wtf("0.0", "all is null");
+            Log.wtf("0.0", "one is null");
         }
 
+    }
+
+    @Override
+    public void onItemLocgCilck(final ItemInfo itemInfo) {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setItems(new CharSequence[]{"Delete"},
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        switch (which) {
+                            case 0:
+                                new AsyncTask<Void, Void, ItemInfo>() {
+
+                                    @Override
+                                    protected ItemInfo doInBackground(Void... voids) {
+                                        itemInfoDB.itemInfoDAO().delete(itemInfo);
+                                        showItemList();
+
+                                        getSupportFragmentManager()
+                                                .popBackStack();
+                                        getSupportFragmentManager().findFragmentByTag(SelectItemSide.TAG);
+
+                                        return null;
+                                    }
+                                }.execute();
+                                break;
+
+                        }
+                    }
+                });
+        builder.show();
     }
 
 

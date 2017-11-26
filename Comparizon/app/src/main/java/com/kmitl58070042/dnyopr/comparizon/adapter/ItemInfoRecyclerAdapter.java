@@ -1,10 +1,13 @@
 package com.kmitl58070042.dnyopr.comparizon.adapter;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.provider.MediaStore;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,6 +20,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.kmitl58070042.dnyopr.comparizon.R;
+import com.kmitl58070042.dnyopr.comparizon.database.ItemInfoDB;
 import com.kmitl58070042.dnyopr.comparizon.fragment.AddItemFragment;
 import com.kmitl58070042.dnyopr.comparizon.fragment.SelectItemSide;
 import com.kmitl58070042.dnyopr.comparizon.model.ItemInfo;
@@ -33,6 +37,8 @@ public class ItemInfoRecyclerAdapter extends RecyclerView.Adapter<ItemInfoRecycl
     private Context context;
     private List<ItemInfo> data;
     private int position;
+    private ItemInfoDB itemInfoDB;
+    private ItemInfo itemInfo;
 
     private ItemInfoRecyclerAdapterListener listener;
 
@@ -85,6 +91,13 @@ public class ItemInfoRecyclerAdapter extends RecyclerView.Adapter<ItemInfoRecycl
 //         holder.imageView.setImageBitmap(bitmap);
         Glide.with(context).load(image).into(holder.imageView);
 
+        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(final View view) {
+                listener.onItemLocgCilck(data.get(position));
+                return true;// returning true instead of false, works for me
+            }
+        });
 
         holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,12 +107,8 @@ public class ItemInfoRecyclerAdapter extends RecyclerView.Adapter<ItemInfoRecycl
                 } else {
                     Log.wtf("what", brand + "/" + detail + "/" + image + "/");
                 }
-
             }
-
-
         });
-
     }
 
     @Override
@@ -125,7 +134,7 @@ public class ItemInfoRecyclerAdapter extends RecyclerView.Adapter<ItemInfoRecycl
         LinearLayout linearLayout;
 
 
-        public ViewHolder(View itemView) {
+        public ViewHolder(final View itemView) {
             super(itemView);
 
             txt_brand = itemView.findViewById(R.id.item_brand);
@@ -140,11 +149,7 @@ public class ItemInfoRecyclerAdapter extends RecyclerView.Adapter<ItemInfoRecycl
 
     public interface ItemInfoRecyclerAdapterListener {
         void setItem(String brand, String detail, String image,float cost, float size);
+        void onItemLocgCilck(ItemInfo itemInfo);
     }
-
-
-
-
-
 
 }

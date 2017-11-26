@@ -45,7 +45,7 @@ public class AddItemFragment extends Fragment implements View.OnClickListener {
     private AddItemFragmentListener listener;
     private Uri uri;
     private ImageView image;
-    private String strPath = null;
+    private String strPath = "";
 
     private int REQUEST_CODE = 1;
 
@@ -53,7 +53,6 @@ public class AddItemFragment extends Fragment implements View.OnClickListener {
     public interface AddItemFragmentListener {
         void onItemAdded();
     }
-
 
     public AddItemFragment() {
         // Required empty public constructor
@@ -78,7 +77,6 @@ public class AddItemFragment extends Fragment implements View.OnClickListener {
         itemInfo = getArguments().getParcelable("itemInfo");
 
         listener = (AddItemFragmentListener) getActivity();
-
 
     }
 
@@ -107,47 +105,58 @@ public class AddItemFragment extends Fragment implements View.OnClickListener {
     }
 
     private void onSave() {
-        if (validateData()) {
+        switch (validateData()) {
+            case 0:
+                Log.e("where", "pass");
+                new AsyncTask<Void, Void, ItemInfo>() {
+                    @Override
+                    protected ItemInfo doInBackground(Void... voids) {
 
-            Log.e("where", "pass");
-            new AsyncTask<Void, Void, ItemInfo>() {
+                        itemInfo.setBrand(brand.getText().toString());
+                        itemInfo.setDetail(detail.getText().toString());
+                        itemInfo.setCost(Float.valueOf(cost.getText().toString()));
+                        itemInfo.setSize(Float.valueOf(size.getText().toString()));
+                        itemInfo.setImage(strPath);
 
-                @Override
-                protected ItemInfo doInBackground(Void... voids) {
+                        itemInfoDB.itemInfoDAO().insert(itemInfo);
+                        return null;
+                    }
 
+                    @Override
+                    protected void onPostExecute(ItemInfo itemInfo) {
+                        super.onPostExecute(itemInfo);
 
-                    itemInfo.setBrand(brand.getText().toString());
-                    itemInfo.setDetail(detail.getText().toString());
-                    itemInfo.setCost(Float.valueOf(cost.getText().toString()));
-                    itemInfo.setSize(Float.valueOf(size.getText().toString()));
-                    itemInfo.setImage(strPath);
+                        listener.onItemAdded();
+                    }
+                }.execute();
+                break;
+            case 1:
+                Toast.makeText(getActivity(), "Please fill all information.", Toast.LENGTH_LONG).show();
+                break;
+            case 2:
+                Toast.makeText(getActivity(), "Cost and size can not be 0.", Toast.LENGTH_LONG).show();
+                break;
+            case 3:
+                Toast.makeText(getActivity(), "Please add a picture.", Toast.LENGTH_LONG).show();
+                break;
 
-                    itemInfoDB.itemInfoDAO().insert(itemInfo);
-                    return null;
-                }
-
-                @Override
-                protected void onPostExecute(ItemInfo itemInfo) {
-                    super.onPostExecute(itemInfo);
-
-                    listener.onItemAdded();
-                }
-            }.execute();
-        } else {
-            Toast.makeText(getActivity(), "Please fill.", Toast.LENGTH_LONG).show();
         }
     }
 
-    private boolean validateData() {
-        if (brand.getText().toString().equals("") ||
-                detail.getText().toString().equals("") ||
-                cost.getText().toString().equals("") ||
-                size.getText().toString().equals("") ||
-                strPath.equals("") ||
+    private int validateData() {
+        if (brand.getText().toString().isEmpty() ||
+                detail.getText().toString().isEmpty() ||
+                cost.getText().toString().isEmpty() ||
+                size.getText().toString().isEmpty()) {
+            return 1;
+        } else if (cost.getText().toString().equals("0") ||
+                size.getText().toString().equals("0")) {
+            return 2;
+        } else if (strPath.isEmpty() ||
                 strPath == null) {
-            return false;
+            return 3;
         }
-        return true;
+        return 0;
     }
 
     @Override
@@ -161,8 +170,6 @@ public class AddItemFragment extends Fragment implements View.OnClickListener {
             Log.wtf("where", "add image");
             addImage();
         }
-
-
     }
 
     private void addImage() {
@@ -207,7 +214,6 @@ public class AddItemFragment extends Fragment implements View.OnClickListener {
         } else {
             Log.wtf("path", "else");
         }
-
 //        if (resultCode == Activity.RESULT_OK) {
 //
 //            if (requestCode == SELECT_FILE) {
@@ -223,7 +229,6 @@ public class AddItemFragment extends Fragment implements View.OnClickListener {
 //            }
 //        }
     }
-
 
     ///get real uri path
 
@@ -242,7 +247,5 @@ public class AddItemFragment extends Fragment implements View.OnClickListener {
 //            }
 //        }
 //    }
-
-
 
 }

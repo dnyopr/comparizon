@@ -12,11 +12,11 @@ public class Compare {
         float netB = costB / sizeB;
 
         if (netA<netB){
-            result = "A item on the left";
+            result = "a item on the left is cheaper!";
         }else if (netA>netB){
-            result = "A item on the right";
+            result = "a item on the right is cheaper!";
         }else {
-            result = "same";
+            result = "same!!";
         }
 
         return result;
