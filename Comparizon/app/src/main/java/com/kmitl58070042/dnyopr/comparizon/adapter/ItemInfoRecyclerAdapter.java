@@ -1,13 +1,6 @@
 package com.kmitl58070042.dnyopr.comparizon.adapter;
 
 import android.content.Context;
-import android.content.DialogInterface;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
-import android.os.AsyncTask;
-import android.provider.MediaStore;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,19 +9,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.kmitl58070042.dnyopr.comparizon.R;
 import com.kmitl58070042.dnyopr.comparizon.database.ItemInfoDB;
-import com.kmitl58070042.dnyopr.comparizon.fragment.AddItemFragment;
-import com.kmitl58070042.dnyopr.comparizon.fragment.SelectItemSide;
 import com.kmitl58070042.dnyopr.comparizon.model.ItemInfo;
 
-import org.w3c.dom.Text;
-
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -94,7 +80,7 @@ public class ItemInfoRecyclerAdapter extends RecyclerView.Adapter<ItemInfoRecycl
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(final View view) {
-                listener.onItemLocgCilck(data.get(position));
+                listener.onItemLongCilck(data.get(position));
                 return true;// returning true instead of false, works for me
             }
         });
@@ -149,7 +135,7 @@ public class ItemInfoRecyclerAdapter extends RecyclerView.Adapter<ItemInfoRecycl
 
     public interface ItemInfoRecyclerAdapterListener {
         void setItem(String brand, String detail, String image,float cost, float size);
-        void onItemLocgCilck(ItemInfo itemInfo);
+        void onItemLongCilck(ItemInfo itemInfo);
     }
 
 }

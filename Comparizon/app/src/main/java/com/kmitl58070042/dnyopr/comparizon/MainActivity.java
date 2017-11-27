@@ -8,6 +8,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
@@ -231,15 +232,23 @@ public class MainActivity
     private void resultSet(String result) {
         TextView txtResult = findViewById(R.id.txt_result);
         txtResult.setText(result);
+
+        txtResult.setTextColor(Color.BLACK);
     }
 
     private void pleaseAddItems(int itemListSize) {
         TextView txtResult = findViewById(R.id.txt_result);
         Log.wtf("size", itemListSize + "");
         if (itemListSize == 0) {
-            txtResult.setText("Please add an item");
+            txtResult.setText("Please add an item.");
+            txtResult.setTextColor(Color.RED);
         } else if (itemListSize == 1) {
-            txtResult.setText("Please add another item");
+            txtResult.setText("Please add another item.");
+        }
+        else {
+            txtResult.setText("Please select 2 items.");
+
+            txtResult.setTextColor(Color.RED);
         }
     }
 
@@ -258,7 +267,7 @@ public class MainActivity
             try {
                 costA = cost;
                 sizeA = size;
-                fragment.setLValue(brand, detail, image);
+                fragment.setLValue(brand, detail, image, String.valueOf(cost), String.valueOf(size));
             } catch (GlideException e) {
                 e.printStackTrace();
             }
@@ -266,7 +275,7 @@ public class MainActivity
             try {
                 costB = cost;
                 sizeB = size;
-                fragment.setRValue(brand, detail, image);
+                fragment.setRValue(brand, detail, image, String.valueOf(cost), String.valueOf(size));
             } catch (GlideException e) {
                 e.printStackTrace();
             }
@@ -284,7 +293,7 @@ public class MainActivity
     }
 
     @Override
-    public void onItemLocgCilck(final ItemInfo itemInfo) {
+    public void onItemLongCilck(final ItemInfo itemInfo) {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 

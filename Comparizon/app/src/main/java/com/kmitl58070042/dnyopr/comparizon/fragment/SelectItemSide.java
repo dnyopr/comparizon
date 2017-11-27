@@ -24,6 +24,8 @@ public class SelectItemSide extends Fragment  {
     private LinearLayout itemL, itemR;
     private TextView itemLName, itemRName;
     private TextView itemLDetail, itemRDetail;
+    private TextView itemLCost, itemRCost;
+    private TextView itemLSize, itemRSize;
     private ImageView itemLImage, itemRImage;
 
     private ItemInfo itemInfo;
@@ -60,11 +62,15 @@ public class SelectItemSide extends Fragment  {
         itemLName = rootView.findViewById(R.id.item_l_name);
         itemLDetail =rootView.findViewById(R.id.item_l_detail);
         itemLImage = rootView.findViewById(R.id.item_l_image);
+        itemLCost = rootView.findViewById(R.id.item_l_cost);
+        itemLSize = rootView.findViewById(R.id.item_l_size);
         itemL = rootView.findViewById(R.id.item_left);
          //setId for right side
         itemRName = rootView.findViewById(R.id.item_r_name);
         itemRDetail =rootView.findViewById(R.id.item_r_detail);
         itemRImage = rootView.findViewById(R.id.item_r_image);
+        itemRCost = rootView.findViewById(R.id.item_r_cost);
+        itemRSize = rootView.findViewById(R.id.item_r_size);
         itemR = rootView.findViewById(R.id.item_right);
 
 
@@ -89,22 +95,27 @@ public class SelectItemSide extends Fragment  {
         return rootView;
     }
 
-    public void setLValue(String brand, String detail, String image) throws GlideException{
+    public void setLValue(String brand, String detail, String image,String cost,String size) throws GlideException{
         Glide.with(getActivity()).load(image).into(itemLImage);
         itemLName.setText(brand);
         itemLDetail.setText(detail);
+        itemLCost.setText(cost);
+        itemLSize.setText(size);
         setStyleSelectR();
     }
 
-    public void setRValue(String brand, String detail, String image) throws GlideException{
+    public void setRValue(String brand, String detail, String image,String cost,String size) throws GlideException{
         Glide.with(getActivity()).load(image).into(itemRImage);
         itemRName.setText(brand);
         itemRDetail.setText(detail);
+        itemRCost.setText(cost);
+        itemRSize.setText(size);
         setStyleSelectL();
     }
 
     private void setStyleSelectL(){
         listener.onItemSelected("L");
+
         itemL.setBackgroundDrawable(getResources().getDrawable(R.drawable.layout_shadow));
         itemR.setBackgroundDrawable(getResources().getDrawable(R.drawable.layout_normal));
     }

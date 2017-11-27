@@ -7,7 +7,7 @@
     android:id="@+id/item_list"
     android:background="@drawable/layout_list_background"
     android:padding="5dp"
-    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
     android:layout_marginLeft="5dp"
     android:layout_marginRight="5dp">
 
@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="5"
-        android:padding="15dp"
+        android:padding="8dp"
         android:scaleType="centerCrop"
         app:srcCompat="@mipmap/ic_launcher_round" />
 
