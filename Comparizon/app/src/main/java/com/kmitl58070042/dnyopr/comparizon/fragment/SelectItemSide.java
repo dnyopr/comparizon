@@ -73,9 +73,6 @@ public class SelectItemSide extends Fragment  {
         itemRSize = rootView.findViewById(R.id.item_r_size);
         itemR = rootView.findViewById(R.id.item_right);
 
-
-
-
         itemInfo = getArguments().getParcelable("itemInfo");
 
         itemL.setOnClickListener(new View.OnClickListener() {
@@ -95,8 +92,12 @@ public class SelectItemSide extends Fragment  {
         return rootView;
     }
 
-    public void setLValue(String brand, String detail, String image,String cost,String size) throws GlideException{
-        Glide.with(getActivity()).load(image).into(itemLImage);
+    public void setLValue(String brand, String detail, String image, String cost, String size) throws GlideException{
+        if(image.equals("default")){
+            itemLImage.setImageDrawable(getResources().getDrawable(R.drawable.default_product_image));
+        }else {
+            Glide.with(getActivity()).load(image).into(itemLImage);
+        }
         itemLName.setText(brand);
         itemLDetail.setText(detail);
         itemLCost.setText(cost);
@@ -104,8 +105,12 @@ public class SelectItemSide extends Fragment  {
         setStyleSelectR();
     }
 
-    public void setRValue(String brand, String detail, String image,String cost,String size) throws GlideException{
-        Glide.with(getActivity()).load(image).into(itemRImage);
+    public void setRValue(String brand, String detail, String image, String cost, String size) throws GlideException{
+        if(image.equals("default")){
+            itemRImage.setImageDrawable(getResources().getDrawable(R.drawable.default_product_image));
+        }else {
+            Glide.with(getActivity()).load(image).into(itemRImage);
+        }
         itemRName.setText(brand);
         itemRDetail.setText(detail);
         itemRCost.setText(cost);

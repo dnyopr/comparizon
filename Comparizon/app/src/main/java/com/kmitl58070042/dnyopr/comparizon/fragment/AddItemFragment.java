@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.media.RatingCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -131,13 +132,10 @@ public class AddItemFragment extends Fragment implements View.OnClickListener {
                 }.execute();
                 break;
             case 1:
-                Toast.makeText(getActivity(), "Please fill all information.", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "Please fill out this form.", Toast.LENGTH_LONG).show();
                 break;
             case 2:
                 Toast.makeText(getActivity(), "Cost and size can not be 0.", Toast.LENGTH_LONG).show();
-                break;
-            case 3:
-                Toast.makeText(getActivity(), "Please add a picture.", Toast.LENGTH_LONG).show();
                 break;
 
         }
@@ -152,9 +150,9 @@ public class AddItemFragment extends Fragment implements View.OnClickListener {
         } else if (cost.getText().toString().equals("0") ||
                 size.getText().toString().equals("0")) {
             return 2;
-        } else if (strPath.isEmpty() ||
-                strPath == null) {
-            return 3;
+        } else if (strPath.isEmpty() || strPath == null) {
+            strPath = "default";
+            Toast.makeText(getActivity(), "Image will set by default.", Toast.LENGTH_LONG).show();
         }
         return 0;
     }
@@ -207,6 +205,7 @@ public class AddItemFragment extends Fragment implements View.OnClickListener {
             try {
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), Uri.parse(strPath));
                 image.setImageBitmap(bitmap);
+                image.setScaleType(ImageView.ScaleType.CENTER_CROP);
             } catch (IOException e) {
                 e.printStackTrace();
             }

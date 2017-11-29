@@ -1,6 +1,8 @@
 package com.kmitl58070042.dnyopr.comparizon.adapter;
 
+import android.annotation.TargetApi;
 import android.content.Context;
+import android.os.Build;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -44,6 +46,7 @@ public class ItemInfoRecyclerAdapter extends RecyclerView.Adapter<ItemInfoRecycl
         return holder;
     }
 
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
         ItemInfo itemInfo = data.get(position);
@@ -75,7 +78,9 @@ public class ItemInfoRecyclerAdapter extends RecyclerView.Adapter<ItemInfoRecycl
         holder.txt_cost.setText(Float.toString(cost));
         holder.txt_size.setText(Float.toString(size));
 //         holder.imageView.setImageBitmap(bitmap);
-        Glide.with(context).load(image).into(holder.imageView);
+        if(!image.equals("default")){
+            Glide.with(context).load(image).into(holder.imageView);
+        }
 
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override

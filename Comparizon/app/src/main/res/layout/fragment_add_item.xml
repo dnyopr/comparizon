@@ -14,32 +14,27 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical" >
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:gravity="center"
-                    android:text="Add Item"
-
-                    android:textSize="25dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:paddingTop="30dp"
                 android:paddingBottom="30dp"
                 android:paddingLeft="30dp"
                 android:paddingRight="30dp">
 
                 <ImageView
                     android:id="@+id/btn_image"
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="170dp"
+                    android:layout_gravity="center"
                     android:onClick="onClick"
                     android:layout_marginBottom="8dp"
-                    android:src="@mipmap/ic_add_image" />
+                    android:src="@drawable/add_image" />
 
                 <com.rengwuxian.materialedittext.MaterialEditText
                     android:id="@+id/edit_brand"

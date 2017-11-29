@@ -3,9 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Comparizon.iml" filepath="$PROJECT_DIR$/Comparizon.iml" />
-      <module fileurl="file://C:\Users\HP_PC01\Desktop\final_project_android\Comparizon\Comparizon.iml" filepath="C:\Users\HP_PC01\Desktop\final_project_android\Comparizon\Comparizon.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\HP_PC01\Desktop\final_project_android\Comparizon\app\app.iml" filepath="C:\Users\HP_PC01\Desktop\final_project_android\Comparizon\app\app.iml" />
     </modules>
   </component>
 </project>
