@@ -40,6 +40,7 @@ import com.kmitl58070042.dnyopr.comparizon.model.Compare;
 import com.kmitl58070042.dnyopr.comparizon.model.ItemInfo;
 import com.kmitl58070042.dnyopr.comparizon.model.Screenshot;
 
+import java.text.DecimalFormat;
 import java.util.List;
 import java.util.concurrent.LinkedTransferQueue;
 
@@ -267,7 +268,7 @@ public class MainActivity
             try {
                 costA = cost;
                 sizeA = size;
-                fragment.setLValue(brand, detail, image, String.valueOf(cost), String.valueOf(size));
+                fragment.setLValue(brand, detail, image, new DecimalFormat("##.00").format(cost), new DecimalFormat("##.00").format(size));
             } catch (GlideException e) {
                 e.printStackTrace();
             }
@@ -275,7 +276,7 @@ public class MainActivity
             try {
                 costB = cost;
                 sizeB = size;
-                fragment.setRValue(brand, detail, image, String.valueOf(cost), String.valueOf(size));
+                fragment.setRValue(brand, detail, image, new DecimalFormat("##.00").format(cost), new DecimalFormat("##.00").format(size));
             } catch (GlideException e) {
                 e.printStackTrace();
             }

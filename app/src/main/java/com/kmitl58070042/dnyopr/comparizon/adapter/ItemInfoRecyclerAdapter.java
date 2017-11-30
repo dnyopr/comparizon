@@ -17,6 +17,7 @@ import com.kmitl58070042.dnyopr.comparizon.R;
 import com.kmitl58070042.dnyopr.comparizon.database.ItemInfoDB;
 import com.kmitl58070042.dnyopr.comparizon.model.ItemInfo;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -75,8 +76,8 @@ public class ItemInfoRecyclerAdapter extends RecyclerView.Adapter<ItemInfoRecycl
 
         holder.txt_brand.setText(brand);
         holder.txt_detail.setText(detail);
-        holder.txt_cost.setText(Float.toString(cost));
-        holder.txt_size.setText(Float.toString(size));
+        holder.txt_cost.setText(new DecimalFormat("##.00").format(cost));
+        holder.txt_size.setText(new DecimalFormat("##.00").format(size));
 //         holder.imageView.setImageBitmap(bitmap);
         if(!image.equals("default")){
             Glide.with(context).load(image).into(holder.imageView);

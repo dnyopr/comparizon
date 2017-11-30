@@ -34,6 +34,7 @@ import com.kmitl58070042.dnyopr.comparizon.model.ItemInfo;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.DecimalFormat;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -149,6 +150,7 @@ public class AddItemFragment extends Fragment implements View.OnClickListener {
             return 1;
         } else if (cost.getText().toString().equals("0") ||
                 size.getText().toString().equals("0")) {
+            
             return 2;
         } else if (strPath.isEmpty() || strPath == null) {
             strPath = "default";

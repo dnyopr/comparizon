@@ -7,169 +7,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="290747cd-81bc-44a8-a4ed-31bce9d43129" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/4.1/fileChanges/last-build.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/4.1/fileContent/fileContent.lock" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/resourceHashesCache.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/classAnalysis.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/jarAnalysis.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/javaCompile.lock" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskHistory.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskJars.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/built.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties.lock" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-11-30-22-41-09-576.rawproto" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-11-30-22-41-42-902.rawproto" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-11-30-22-44-36-445.rawproto" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-11-30-22-44-42-097.rawproto" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/android_arch_core_common_1_0_0_jar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/android_arch_core_runtime_1_0_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/android_arch_lifecycle_common_1_0_0_jar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/android_arch_lifecycle_runtime_1_0_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/android_arch_persistence_db_1_0_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/android_arch_persistence_db_framework_1_0_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/android_arch_persistence_room_common_1_0_0_jar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/android_arch_persistence_room_runtime_1_0_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_animated_vector_drawable_26_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_appcompat_v7_26_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_constraint_constraint_layout_1_0_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_constraint_constraint_layout_solver_1_0_2_jar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_recyclerview_v7_26_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_support_annotations_26_1_0_jar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_support_compat_26_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_support_core_ui_26_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_support_core_utils_26_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_support_fragment_26_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_support_media_compat_26_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_support_v4_26_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_support_vector_drawable_26_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_test_espresso_espresso_contrib_2_2_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_test_espresso_espresso_core_3_0_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_test_espresso_espresso_idling_resource_3_0_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_test_rules_1_0_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_test_runner_1_0_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/com_github_bumptech_glide_annotations_4_1_1_jar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/com_github_bumptech_glide_disklrucache_4_1_1_jar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/com_github_bumptech_glide_gifdecoder_4_1_1_jar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/com_github_bumptech_glide_glide_4_1_1_jar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/com_google_android_apps_common_testing_accessibility_framework_accessibility_test_framework_2_0_jar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/com_google_code_findbugs_jsr305_2_0_1_jar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/com_google_code_gson_gson_2_8_1_jar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/com_jakewharton_butterknife_8_8_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/com_jakewharton_butterknife_annotations_8_8_1_jar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/com_nineoldandroids_library_2_4_0_jar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/com_rengwuxian_materialedittext_library_2_1_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/com_squareup_javawriter_2_1_1_jar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/javax_inject_javax_inject_1_jar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/junit_junit_4_12_jar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/net_sf_kxml_kxml2_2_3_0_jar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/org_hamcrest_hamcrest_core_1_3_jar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/org_hamcrest_hamcrest_integration_1_3_jar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/org_hamcrest_hamcrest_library_1_3_jar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Comparizon.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/kmitl58070042/dnyopr/comparizon/MainActivityTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/kmitl58070042/dnyopr/comparizon/MainActivityTest2.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-11-30-22-41-09-576.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-11-30-22-41-42-902.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-11-30-22-44-36-445.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/android-profile/profile-2017-11-30-22-44-42-097.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/final_project_android.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/local.properties" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Comparizon/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Comparizon/.idea/modules.xml" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/.idea/runConfigurations.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/.gitignore" afterPath="$PROJECT_DIR$/app/.gitignore" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/proguard-rules.pro" afterPath="$PROJECT_DIR$/app/proguard-rules.pro" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/androidTest/java/com/kmitl58070042/dnyopr/comparizon/ExampleInstrumentedTest.java" afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/kmitl58070042/dnyopr/comparizon/ExampleInstrumentedTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/ic_add_image-web.png" afterPath="$PROJECT_DIR$/app/src/main/ic_add_image-web.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/java/com/kmitl58070042/dnyopr/comparizon/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/kmitl58070042/dnyopr/comparizon/MainActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/java/com/kmitl58070042/dnyopr/comparizon/adapter/ItemInfoRecyclerAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/kmitl58070042/dnyopr/comparizon/adapter/ItemInfoRecyclerAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/java/com/kmitl58070042/dnyopr/comparizon/database/ItemInfoDAO.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/kmitl58070042/dnyopr/comparizon/database/ItemInfoDAO.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/java/com/kmitl58070042/dnyopr/comparizon/database/ItemInfoDB.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/kmitl58070042/dnyopr/comparizon/database/ItemInfoDB.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/java/com/kmitl58070042/dnyopr/comparizon/fragment/AddItemFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/kmitl58070042/dnyopr/comparizon/fragment/AddItemFragment.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/java/com/kmitl58070042/dnyopr/comparizon/fragment/SelectItemSide.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/kmitl58070042/dnyopr/comparizon/fragment/SelectItemSide.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/java/com/kmitl58070042/dnyopr/comparizon/model/Compare.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/kmitl58070042/dnyopr/comparizon/model/Compare.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/java/com/kmitl58070042/dnyopr/comparizon/model/ItemInfo.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/kmitl58070042/dnyopr/comparizon/model/ItemInfo.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/java/com/kmitl58070042/dnyopr/comparizon/model/Screenshot.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/kmitl58070042/dnyopr/comparizon/model/Screenshot.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/drawable-hdpi/ic_add.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/ic_add.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/drawable-hdpi/ic_share.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/ic_share.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/drawable-mdpi/ic_add.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/ic_add.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/drawable-mdpi/ic_share.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/ic_share.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/drawable-xhdpi/ic_add.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/ic_add.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/drawable-xhdpi/ic_share.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/ic_share.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/drawable-xxhdpi/ic_add.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_add.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/drawable-xxhdpi/ic_share.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_share.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/drawable/add_image.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/add_image.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/drawable/beaker.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/beaker.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/drawable/btn_plus.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/btn_plus.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/drawable/btn_plus_16.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/btn_plus_16.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/drawable/btn_plus_24.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/btn_plus_24.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/drawable/default_product_image.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/default_product_image.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/drawable/dollar.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/dollar.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/drawable/ic_launcher_background.xml" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/drawable/layout_header.xml" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/layout_header.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/drawable/layout_list_background.xml" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/layout_list_background.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/drawable/layout_normal.xml" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/layout_normal.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/drawable/layout_shadow.xml" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/layout_shadow.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/drawable/plus.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/plus.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/layout/fragment_add_item.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_add_item.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/layout/fragment_item_selected.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_item_selected.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/layout/fragment_share_result.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_share_result.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/layout/item_details_layout.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_details_layout.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/layout/iteminfo_list.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/iteminfo_list.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/menu/menu_button.xml" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_button.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/mipmap-hdpi/app_logo.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/app_logo.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/mipmap-hdpi/app_logo_round.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/app_logo_round.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/mipmap-hdpi/ic_add_image.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_add_image.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/mipmap-mdpi/app_logo.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/app_logo.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/mipmap-mdpi/app_logo_round.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/app_logo_round.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/mipmap-mdpi/ic_add_image.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_add_image.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/mipmap-xhdpi/app_logo.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/app_logo.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/mipmap-xhdpi/app_logo_round.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/app_logo_round.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/mipmap-xhdpi/ic_add_image.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_add_image.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/mipmap-xxhdpi/app_logo.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/app_logo.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/mipmap-xxhdpi/app_logo_round.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/app_logo_round.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/mipmap-xxhdpi/ic_add_image.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_add_image.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/mipmap-xxxhdpi/app_logo.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/app_logo.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/mipmap-xxxhdpi/ic_add_image.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_add_image.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/values/colors.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/main/res/values/styles.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/app/src/test/java/com/kmitl58070042/dnyopr/comparizon/ExampleUnitTest.java" afterPath="$PROJECT_DIR$/app/src/test/java/com/kmitl58070042/dnyopr/comparizon/ExampleUnitTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/gradle.properties" afterPath="$PROJECT_DIR$/gradle.properties" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/gradle/wrapper/gradle-wrapper.jar" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/gradle/wrapper/gradle-wrapper.properties" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/gradlew" afterPath="$PROJECT_DIR$/gradlew" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/gradlew.bat" afterPath="$PROJECT_DIR$/gradlew.bat" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Comparizon/settings.gradle" afterPath="$PROJECT_DIR$/settings.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/classAnalysis.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/javaCompile.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/javaCompile.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskHistory.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskJars.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskJars.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/kmitl58070042/dnyopr/comparizon/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/kmitl58070042/dnyopr/comparizon/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/kmitl58070042/dnyopr/comparizon/adapter/ItemInfoRecyclerAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/kmitl58070042/dnyopr/comparizon/adapter/ItemInfoRecyclerAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/kmitl58070042/dnyopr/comparizon/fragment/AddItemFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/kmitl58070042/dnyopr/comparizon/fragment/AddItemFragment.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -193,20 +45,69 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="15" column="39" lean-forward="false" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
           <provider editor-type-id="android-manifest">
             <state />
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AddItemFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kmitl58070042/dnyopr/comparizon/fragment/AddItemFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="271">
+              <caret line="121" column="0" lean-forward="false" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SelectItemSide.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kmitl58070042/dnyopr/comparizon/fragment/SelectItemSide.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="112" column="102" lean-forward="true" selection-start-line="112" selection-start-column="102" selection-end-line="112" selection-end-column="102" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kmitl58070042/dnyopr/comparizon/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="341">
+              <caret line="278" column="96" lean-forward="true" selection-start-line="278" selection-start-column="57" selection-end-line="278" selection-end-column="96" />
+              <folding>
+                <element signature="e#9652#10674#0" expanded="true" />
+                <element signature="e#9878#10557#0" expanded="true" />
+                <element signature="e#10556#10557#0" expanded="true" />
+                <element signature="e#10673#10674#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ItemInfoRecyclerAdapter.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kmitl58070042/dnyopr/comparizon/adapter/ItemInfoRecyclerAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="80" column="51" lean-forward="true" selection-start-line="80" selection-start-column="51" selection-end-line="80" selection-end-column="51" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="GenerateSignedApkSettings">
+    <option name="KEY_STORE_PATH" value="$PROJECT_DIR$/../comparizon" />
+    <option name="KEY_ALIAS" value="key0" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -2012,11 +1913,20 @@
       <projects_view />
     </option>
   </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/app/src/main/java/com/kmitl58070042/dnyopr/comparizon/fragment/AddItemFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/kmitl58070042/dnyopr/comparizon/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/kmitl58070042/dnyopr/comparizon/adapter/ItemInfoRecyclerAdapter.java" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="512" />
+    <option name="x" value="6" />
     <option name="y" value="23" />
     <option name="width" value="1914" />
-    <option name="height" value="990" />
+    <option name="height" value="991" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -2034,6 +1944,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -2058,6 +1971,24 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="final_project_android" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="comparizon" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -2166,31 +2097,18 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="final_project_android" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manifests" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidManifestsGroupNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="ProjectPane" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="device.picker.selection" value="Nexus_5X_API_23" />
+    <property name="ExportApk.ApkPath" value="$PROJECT_DIR$/app" />
+    <property name="ExportApk.Flavors" value="" />
+    <property name="ExportApk.BuildType" value="release" />
+    <property name="ExportApk.SignV1" value="true" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -2408,11 +2326,12 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="512" y="23" width="1914" height="990" extended-state="0" />
+    <frame x="6" y="23" width="1914" height="991" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32963374" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2420,13 +2339,13 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24626069" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14155982" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -2459,12 +2378,57 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="15" column="39" lean-forward="false" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
       <provider editor-type-id="android-manifest">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kmitl58070042/dnyopr/comparizon/fragment/SelectItemSide.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="324">
+          <caret line="112" column="102" lean-forward="true" selection-start-line="112" selection-start-column="102" selection-end-line="112" selection-end-column="102" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kmitl58070042/dnyopr/comparizon/fragment/AddItemFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="121" column="0" lean-forward="false" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kmitl58070042/dnyopr/comparizon/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="278" column="96" lean-forward="true" selection-start-line="278" selection-start-column="57" selection-end-line="278" selection-end-column="96" />
+          <folding>
+            <element signature="e#9652#10674#0" expanded="true" />
+            <element signature="e#9878#10557#0" expanded="true" />
+            <element signature="e#10556#10557#0" expanded="true" />
+            <element signature="e#10673#10674#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kmitl58070042/dnyopr/comparizon/adapter/ItemInfoRecyclerAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="80" column="51" lean-forward="true" selection-start-line="80" selection-start-column="51" selection-end-line="80" selection-end-column="51" />
           <folding />
         </state>
       </provider>
